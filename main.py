@@ -5,6 +5,7 @@ import json
 from googleapiclient.discovery import build
 from bs4 import BeautifulSoup
 from random import randint
+from keep_alive import keep_alive
 
 client = discord.Client()
 my_secret2 = os.environ['You_API']
@@ -51,4 +52,5 @@ async def on_message(msg):
     res = gfg.get_text('\n')
     await msg.channel.send(res)
 
+keep_alive()
 client.run(my_secret)
