@@ -10,14 +10,15 @@ from keep_alive import keep_alive
 client = discord.Client()
 my_secret2 = os.environ['You_API']
 my_secret = os.environ['TOKEN']
-video_id = "XbGs_qK2PQA" #rap god
+vids=["XbGs_qK2PQA","j5-yKhDd64s","r_0JjYUe5jo","8CdcCD5V-d8","1wYNFfgrXTI"]
+orders = ["relevance","time","orderUnspecified"]
 
 youtube = build('youtube','v3',developerKey=my_secret2)
 
 request = youtube.commentThreads().list(
   part="snippet",
-  videoId=video_id,
-  order="relevance"
+  videoId=vids[randint(0,4)],
+  order=orders[randint(0,2)]
 )
 
 def get_com():
