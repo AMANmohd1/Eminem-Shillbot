@@ -12,13 +12,14 @@ my_secret2 = os.environ['You_API']
 my_secret = os.environ['TOKEN']
 vids=["XbGs_qK2PQA","j5-yKhDd64s","r_0JjYUe5jo","8CdcCD5V-d8","1wYNFfgrXTI"]
 orders = ["relevance","time","orderUnspecified"]
+rand_order=orders[randint(0,2)]
 
 youtube = build('youtube','v3',developerKey=my_secret2)
 
 request = youtube.commentThreads().list(
   part="snippet",
   videoId=vids[randint(0,4)],
-  order=orders[randint(0,2)]
+  order=rand_order
 )
 
 def get_com():
