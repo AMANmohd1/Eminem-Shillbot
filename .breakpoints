@@ -1,11 +1,19 @@
 {
   "files": {
+    "bot.py": [
+      {
+        "id": "59fa6854-df3d-42de-9ccd-4c30099f15bb",
+        "line": 12,
+        "version": 150,
+        "index": 193
+      }
+    ],
     "main.py": [
       {
         "id": "495ca5b2-4312-4226-999f-f3e2d1c26202",
-        "line": 47,
-        "version": 1308,
-        "index": 1149
+        "line": 56,
+        "version": 3650,
+        "index": 1570
       }
     ]
   }
