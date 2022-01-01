@@ -84,9 +84,14 @@ async def on_message(msg):
 
   if msg.content.startswith('!comment'):
     comment = get_com()
-    gfg = BeautifulSoup(comment,features="html5lib")
-    res = gfg.get_text('\n')
-    await msg.channel.send(res)
+    # gfg = BeautifulSoup(comment,features="html5lib")
+    # res = gfg.get_text('\n')
+
+    embed = discord.Embed(title = '**'+comment+'**')
+    embed.set_thumbnail(url = "https://c.tenor.com/cHlqDAcNK4AAAAAC/eminem-funny.gif")
+
+
+    await msg.channel.send(embed = embed)
 
   if msg.content.startswith('!commands'):
     comment = '!comment - Get random Eminem video comment \n!copypasta - Get random Copypasta \n!eminem - Get info on Eminem \n!salman - Sallu bhai \n!chad - Get Chad \n!virgin - Get Virgin' 
@@ -99,10 +104,15 @@ async def on_message(msg):
     for post in subreddit.hot(limit = 25):
       posts.append(post)
     rand_post = posts[randint(0,24)]
-    final_post = '**'+rand_post.title+'**'+'\n'+'||'+rand_post.selftext+'||'
-    gfg = BeautifulSoup(final_post,features="html5lib")
-    res = gfg.get_text('\n')
-    await msg.channel.send(res)
+    # final_post = '**'+rand_post.title+'**'+'\n'+'||'+rand_post.selftext+'||'
+    # gfg = BeautifulSoup(final_post,features="html5lib")
+    # res = gfg.get_text('\n')
+
+    embed = discord.Embed(title = '**'+rand_post.title+'**',description = '||'+rand_post.selftext+'||')
+    embed.set_thumbnail(url = "https://indiachan.com/.media/0fbe360148942114b6de94b58a410dc6d6fbb91751d9609b134cc694e3a1d8e0.png")
+    
+
+    await msg.channel.send(embed = embed)
 
   if msg.content.startswith('!salman'):
     await msg.channel.send('https://c.tenor.com/s4OGlEEUjr4AAAAM/salman-salman-khan.gif')
